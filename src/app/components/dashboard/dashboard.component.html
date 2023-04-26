@@ -1,11 +1,11 @@
 <!-- Top navigation -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-    <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
+    <img class="brand-logo" src="assets/firebase.svg" alt="positronX.io Logo">
   </a>
 </nav>
 <!-- Sidebar navigation -->
-<div class="container-fluid">
+<div class="container-fluid mt-5 pt-5">
   <div class="row">
     <nav class="col-md-2 d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
@@ -34,8 +34,8 @@
         <div class="row" *ngIf="authService.userData as user">
           <div class="col-md-12">
             <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                alt="{{user.displayName}}">
+              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.svg'}}"
+                alt="{{user.displayName}}" style="height: 100px;">
               <div class="media-body">
                 <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
                 <p>User ID: <strong>{{user.uid}}</strong></p>

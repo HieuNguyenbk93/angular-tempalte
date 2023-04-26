@@ -89,11 +89,13 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
+    console.log('check login: ',user);
     return user !== null && user.emailVerified !== false ? true : false;
   }
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
+      console.log('google login:', res);
       this.router.navigate(['dashboard']);
     });
   }
@@ -102,8 +104,9 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['dashboard']);
+        console.log('auth login:',result);
         this.SetUserData(result.user);
+        this.router.navigate(['dashboard']);
       })
       .catch((error) => {
         window.alert(error);
